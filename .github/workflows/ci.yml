@@ -24,4 +24,5 @@ jobs:
 
       - name: Run notebook tests
         run: |
+          export sample_dataset='./ecommerce_sample.csv'
           pytest --nbmake .
