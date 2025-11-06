@@ -21,6 +21,12 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install nbmake
+          pip install ruff
+          
+      - name: Run linter (Ruff)
+        run: ruff check 'Ecommerce analysis - UK company (UCI Machine Learning Dataset).ipynb' --ignore=E703 
+        #E703 is a semicolon added to prevent rendering of an unnecesary output and should not be removed
+ 
 
       - name: Run notebook tests
         run: |
